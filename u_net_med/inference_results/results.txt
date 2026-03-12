@@ -1,0 +1,6 @@
+Best model checkpoint: checkpoints/u_net_med/best_model.pth
+Checkpoint epoch: 90
+Checkpoint best val dice: 0.900758
+
+Test Dice (on validation set): 0.892331
+Number of samples: 400

@@ -1,0 +1,42 @@
+train:
+  data_dir: "data"
+  img_size: 256
+  batch_size: 32
+  num_workers: 8
+  pin_memory: true
+  model: "unet"
+  in_channels: 3
+  out_channels: 1
+  epochs: 100
+  optimizer: "adam"
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  scheduler: "cosine"
+  early_stopping_patience: 15
+  loss: "dice_bce"
+  val_split: 0.2
+  val_frequency: 1
+  log_dir: "logs"
+  checkpoint_dir: "checkpoints"
+  save_frequency: 5
+  tensorboard: true
+  wandb: false
+  device: "cuda"
+  gpu_ids: [0]
+  use_amp: true
+
+dataset:
+  isic2017:
+    train_images: "data/images"
+    train_masks: "data/masks"
+    image_extension: ".jpg"
+    mask_extension: ".png"
+    augmentations: true
+    normalize_mean: [0.485, 0.456, 0.406]
+    normalize_std: [0.229, 0.224, 0.225]
+
+logging:
+  name: "u_net_med"
+  project: "medical-segmentation"
+  tags: ["unet", "isic2017", "adam", "256px", "3090"]
+  notes: "Baseline U-Net for skin lesion segmentation on ISIC 2017 with GTX 3090"

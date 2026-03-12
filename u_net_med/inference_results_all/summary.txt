@@ -1,0 +1,10 @@
+Best model checkpoint: checkpoints/u_net_med/best_model.pth
+Checkpoint epoch: 90
+Checkpoint best val dice: 0.900758
+
+Number of validation samples: 400
+Mean Dice Score: 0.892331
+Std Dice Score: 0.122653
+Min Dice Score: 0.098677
+Max Dice Score: 0.989371
+Median Dice Score: 0.931650
